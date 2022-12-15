@@ -3,7 +3,6 @@ import shutil
 from pathlib import Path
 import re
 import string
-import sys
 import random
 import concurrent.futures
 
@@ -44,17 +43,16 @@ def main():
 
 
 def folder_address():
-    return Path(r"C:\To_sort")
-    # if len(sys.argv) == 1:
-    #     if input("I'll sort content of current folder, OK?\nEnter 'Y' to continue or 'N' to close me ") in ("Y", "y"):
-    #         return Path()
-    #     else:
-    #         sys.exit()
-    # elif Path((sys.argv[1])).exists():
-    #     return Path(sys.argv[1])
-    # else:
-    #     print("Please restart script and specify correct folder address")
-    #     sys.exit()
+    if len(sys.argv) == 1:
+        if input("I'll sort content of current folder, OK?\nEnter 'Y' to continue or 'N' to close me ") in ("Y", "y"):
+            return Path()
+        else:
+            sys.exit()
+    elif Path((sys.argv[1])).exists():
+        return Path(sys.argv[1])
+    else:
+        print("Please restart script and specify correct folder address")
+        sys.exit()
 
 
 def recursive_scan(path):
