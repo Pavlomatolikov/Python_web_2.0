@@ -13,6 +13,7 @@ def factorize_one_process(*numbers):
         result.append(dividers)
     return result
 
+
 def factorize_multy_process(number):
     dividers = []
     for i in range(1, int(number / 2) + 1):
